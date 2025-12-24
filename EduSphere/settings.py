@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     
     'main',
     'accounts',
-    'posts'
+    'posts',
+    'cities_light'
 ]
 
 MIDDLEWARE = [
@@ -71,7 +72,7 @@ WSGI_APPLICATION = 'EduSphere.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'edusphere',
         'USER': 'postgres',
         'PASSWORD': '149868',
@@ -201,3 +202,4 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_OBTAIN_SERIALIZER": "rest_framework_simplejwt.serializers.TokenObtainSlidingSerializer",
     "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
 }
+

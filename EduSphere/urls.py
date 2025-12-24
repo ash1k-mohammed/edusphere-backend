@@ -7,7 +7,7 @@ from api.v1.accounts.views import refresh_token
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('59f0e5f8-fe36-47bf-91f8-1c5636aad478/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('api/token/refresh/', refresh_token, name='token_refresh'),
     path('api/v1/accounts/', include('api.v1.accounts.urls', namespace='api_v1_accounts')),

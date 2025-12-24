@@ -172,7 +172,6 @@ def user_details(request,pk):
 @permission_classes([IsAuthenticated])
 def logout_view(request):
     try:
-        # Get the refresh token from the request data
         refresh_token = request.data.get('refresh')
 
         if not refresh_token:
@@ -181,12 +180,10 @@ def logout_view(request):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        # Create a RefreshToken object and blacklist it
         token = RefreshToken(refresh_token)
         token.blacklist()
 
-        # Optional: Logout the user from the session if you're using session-based auth as well
-        # logout(request)
+     
 
         response_data = {
             "StatusCode": 6000,
@@ -203,5 +200,3 @@ def logout_view(request):
             {"message": "Invalid or expired refresh token"},
             status=status.HTTP_400_BAD_REQUEST
         )
-
-    
